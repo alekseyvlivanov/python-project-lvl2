@@ -1,0 +1,27 @@
+install:
+	poetry install
+
+lint:
+	poetry run flake8 difference_calculator
+
+test:
+	poetry run pytest
+
+test-coverage:
+	poetry run pytest --cov=difference_calculator --cov-report xml
+
+selfcheck:
+	poetry check
+
+check: selfcheck lint test
+
+build: check
+	poetry build
+
+publish: check
+	poetry publish --dry-run
+
+package-install: check
+	python3 -m pip install --force-reinstall --user dist/*.whl
+
+.PHONY: install lint build publish package-install
