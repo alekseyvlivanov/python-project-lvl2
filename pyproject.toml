@@ -7,7 +7,7 @@ classifiers = [
   "Environment :: Console",
   "Topic :: Utilities",
 ]
-packages = [{ include = "difference_calculator" }]
+packages = [{ include = "gendiff" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -27,6 +27,9 @@ isort = "^5.10.1"
 pytest = "^7.0.1"
 pytest-cov = "^3.0.0"
 rope = "^0.22.0"
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
