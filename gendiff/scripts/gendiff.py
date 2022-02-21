@@ -2,19 +2,20 @@
 
 import argparse
 
+from gendiff import generate_diff
+
 
 def main():
     parser = argparse.ArgumentParser(description="Generate diff")
-    parser.add_argument("first_file")
-    parser.add_argument("second_file")
+    parser.add_argument("first_file", type=str)
+    parser.add_argument("second_file", type=str)
     parser.add_argument(
-        "-f",
-        "--format",
-        default="json",
-        help="set format of output",
+        "-f", "--format", default="json", help="set format of output", type=str
     )
+    args = parser.parse_args()
 
-    parser.parse_args()
+    diff = generate_diff(args.first_file, args.second_file)
+    print(diff)
 
 
 if __name__ == "__main__":
