@@ -4,17 +4,19 @@ install:
 lint:
 	poetry run flake8 gendiff
 
-# test:
-# 	poetry run pytest
+test:
+	poetry run pytest
 
-# test-coverage:
-# 	poetry run pytest --cov=gendiff --cov-report xml
+test-coverage:
+	poetry run pytest --cov=gendiff
+
+test-coverage-cc:
+	poetry run pytest --cov=gendiff --cov-report xml
 
 selfcheck:
 	poetry check
 
-# check: selfcheck lint test
-check: selfcheck lint
+check: selfcheck lint test
 
 build: check
 	poetry build

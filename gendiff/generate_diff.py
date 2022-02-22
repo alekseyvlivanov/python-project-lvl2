@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import json
-from xmlrpc.client import Boolean
 
 from gendiff.utils import get_file_content
 
@@ -45,14 +44,14 @@ def format_diff(diff_data):
         status = obj["status"]
         value = obj["value"]
 
-        if isinstance(value, Boolean):
+        if type(value) == bool:
             value = str(value).lower()
 
         if status == "modified":
-            result += "{}{}{}: {}\n".format(indent, markers["added"], key, value[0])
-            result += "{}{}{}: {}\n".format(indent, markers["removed"], key, value[1])
+            result += "{}{}{}: {}\n".format(indent, markers["removed"], key, value[0])
+            result += "{}{}{}: {}\n".format(indent, markers["added"], key, value[1])
         else:
-            result += "{}{}{}: {}\n".format(indent, markers["unmodified"], key, value)
+            result += "{}{}{}: {}\n".format(indent, markers[status], key, value)
 
     return result + "}"
 
