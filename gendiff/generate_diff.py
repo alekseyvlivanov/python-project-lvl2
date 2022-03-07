@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import json
-
-from gendiff.utils import get_file_content
+from gendiff.parsers import parse_content
+from gendiff.utils import get_file_content, get_file_type
 
 
 def build_diff(first_data, second_data):
@@ -57,10 +56,16 @@ def format_diff(diff_data):
 
 
 def generate_diff(first_file, second_file):
-    first_data = json.loads(get_file_content(first_file))
-    second_data = json.loads(get_file_content(second_file))
+    first_file_content = get_file_content(first_file)
+    second_file_content = get_file_content(second_file)
 
-    diff_data = build_diff(first_data, second_data)
+    first_file_type = get_file_type(first_file)
+    second_file_type = get_file_type(second_file)
+
+    first_file_data = parse_content(first_file_content, first_file_type)
+    second_file_data = parse_content(second_file_content, second_file_type)
+
+    diff_data = build_diff(first_file_data, second_file_data)
     formatted_data = format_diff(diff_data)
 
     return formatted_data

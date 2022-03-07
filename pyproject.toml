@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.4"
+version = "0.1.5"
 description = "Difference calculator - a cli utility to find the difference between two config files"
 authors = ["Aleksey Ivanov <aleksey.vl.ivanov@gmail.com>"]
 classifiers = [
@@ -11,6 +11,7 @@ packages = [{ include = "gendiff" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+PyYAML = "^6.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"
