@@ -4,9 +4,9 @@ from gendiff import generate_diff
 from gendiff.utils import get_file_content
 
 
-def test_diff_json():
+def test_diff_yaml():
     first_file = "./tests/fixtures/file1.json"
-    second_file = "./tests/fixtures/file2.json"
+    second_file = "./tests/fixtures/file2.yml"
     diff_file = "./tests/fixtures/diff_file1_file2.txt"
 
     actual = generate_diff(first_file, second_file)

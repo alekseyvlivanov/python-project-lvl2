@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from gendiff.generate_diff import generate_diff
+from gendiff import generate_diff
 from gendiff.utils import get_file_content
 
 

@@ -11,5 +11,7 @@ parsers = {
 
 
 def parse_content(file_content, file_type):
-    if file_type in parsers:
-        return parsers[file_type](file_content)
+    if file_type not in parsers:
+        raise Exception(f'"{file_type}" file type is not supported yet')
+
+    return parsers[file_type](file_content)
