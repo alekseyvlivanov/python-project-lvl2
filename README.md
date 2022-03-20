@@ -9,4 +9,4 @@
 
 ### Difference Calculator demo
 
-[![asciicast](https://asciinema.org/a/hGujph9jxkfGe5TmgiRPx3MRE.svg)](https://asciinema.org/a/hGujph9jxkfGe5TmgiRPx3MRE)
+[![asciicast](https://asciinema.org/a/fX2fIfLqHab0Qwdq5FHSZMrE4.svg)](https://asciinema.org/a/fX2fIfLqHab0Qwdq5FHSZMrE4)

@@ -4,12 +4,23 @@ from gendiff import generate_diff
 from gendiff.utils import get_file_content
 
 
-def test_diff_yaml():
+def test_diff_yaml_plain():
     first_file = "./tests/fixtures/file1.yaml"
     second_file = "./tests/fixtures/file2.yml"
-    diff_file = "./tests/fixtures/diff_file1_file2.txt"
+    diff_file = "./tests/fixtures/diff_file1_file2.plain"
 
-    actual = generate_diff(first_file, second_file)
+    actual = generate_diff(first_file, second_file, output_format="plain")
+    expected = get_file_content(diff_file).strip()
+
+    assert actual == expected
+
+
+def test_diff_yaml_stylish():
+    first_file = "./tests/fixtures/file1.yaml"
+    second_file = "./tests/fixtures/file2.yml"
+    diff_file = "./tests/fixtures/diff_file1_file2.stylish"
+
+    actual = generate_diff(first_file, second_file, output_format="stylish")
     expected = get_file_content(diff_file).strip()
 
     assert actual == expected

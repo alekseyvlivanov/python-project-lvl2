@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from gendiff.formatters import stylish
 
-formatters = {"stylish": stylish.format_stylish}
+from gendiff.formatters import plain, stylish
+
+formatters = {
+    "plain": plain.format_plain,
+    "stylish": stylish.format_stylish,
+}
 
 
 def format_diff(diff_data, output_format):
