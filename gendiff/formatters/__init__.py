@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 
-from gendiff.formatters import plain, stylish
+from gendiff.formatters import json, plain, stylish
 
 formatters = {
+    "json": json.format_json,
     "plain": plain.format_plain,
     "stylish": stylish.format_stylish,
 }
